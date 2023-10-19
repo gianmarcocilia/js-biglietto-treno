@@ -6,23 +6,22 @@ console.log(chilometri, eta);
 // LOGICA
 const prezzoBiglietto = chilometri * 0.21;
 
-let sconto = "";
+let sconto = 0;
 
 if (eta > 65) {
-    sconto = 0.40;
+    sconto = prezzoBiglietto * 0.40;
 } else if (eta < 18) {
-    sconto = 0.20;
-} else {
-    sconto = 1;
-}
+    sconto = prezzoBiglietto * 0.20;
+} 
+
 console.log(sconto);
 
-const prezzoBigliettoFinale = (prezzoBiglietto * sconto).toFixed(2);
+const prezzoBigliettoFinale = prezzoBiglietto - sconto;
 console.log(prezzoBigliettoFinale);
 
 const message = `
 <h2>Ciao!</h2>
-<p>Ecco il prezzo del tuo biglietto: ${prezzoBigliettoFinale}</p>
+<p>Ecco il prezzo del tuo biglietto: ${prezzoBigliettoFinale.toFixed(2)} €</p>
 `;
 
 
